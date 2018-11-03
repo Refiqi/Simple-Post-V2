@@ -1,2 +1,14 @@
-<h2> <%= @post.title %> </h2>
+<div class="container">
+	<h2> <%= @post.title %> </h2>
+</div>
 <p> <%= @post.body %> </p>
+<hr>
+<div class="field"> 
+	<%= link_to 'Edit', edit_post_path(@post),:class => 'btn btn-default' %><vr>
+	<%= link_to 'Delete', post_path(@post),
+			:class => 'btn btn-danger',
+			 	method: :delete,
+			 	data: {confirm:'Are you sure?'} %>
+
+
+</div>
