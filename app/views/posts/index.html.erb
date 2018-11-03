@@ -1,0 +1,9 @@
+<h1>Simple Blog</h1>
+
+<% @post.each do |p| %>
+<div class="field">
+	<h3><%= p.title %></h3>
+	<p><%= p.body %></p>
+	<%= link_to 'Read More' , post_path(p), :class => 'btn'%>
+
+<% end %>
