@@ -1,7 +1,14 @@
+#Simple Blog
+ [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() 
+Languages : Ruby, Framework : Rails
+Basic CRUD with Authenticate.  
+
 # Pre
     Ruby version 2.5.0 or higher
+    Postgresql
     Bundler
     Rails
+
 # Run Local
   
     git clone <url repo> | Clone this repo
@@ -19,4 +26,4 @@
 
 
 # Author
-refiqi | refyfadhila96@gmail.com
+Refiqi Muhamad Fadila | refyfadhila96@gmail.com
