@@ -2,9 +2,11 @@
 <%= form_for :post,url: post_path(@post),method: :patch do |f| %>
 <% if @post.errors.any? %>
 	<% @post.errors.messages.each do |msg| %>
-		<div class="alert alert-danger"> <%= msg %></div>
+<div class="alert alert-danger"> <%= msg %></div>
 	<% end %>
 <% end %>
+
+
 
 <p>
 	<%= f.label :title %><br>
