@@ -1,4 +1,4 @@
-#Simple Blog
+# Simple Blog
  [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() 
 Languages : Ruby, Framework : Rails
 Basic CRUD with Authenticate.  
