@@ -1,32 +1,28 @@
-<div class="container">
-	<h2> <%= @post.title %> </h2>
-</div>
-<p> <%= @post.body %> </p>
+<h2><%= @post.title %></h2>
+<p> <%= @post.body %></p>
 <hr>
-<div class="field"> 
-	<%= link_to 'Edit', edit_post_path(@post),:class => 'btn btn-default' %><vr>
-	<%= link_to 'Delete', post_path(@post),
-			:class => 'btn btn-danger',
-			 	method: :delete,
-			 	data: {confirm:'Are you sure?'} %>
+<%= link_to 'Edit', edit_post_path(@post),:class => 'btn btn-primary'%>
+<%= link_to 'Delete', post_path(@post),							:class => 'btn btn-danger',
+				method: :delete,
+				data: {confirm: 'Are You Sure?'}%>
+
 <hr>
-<div class="field">
-	<h3>Comments</h3>
-	<% @post.comments.each do |comment| %>
-	<% if @post.errors.any? %>
-	<% @post.errors.messages.each do |msg| %>
-		<div class="alert alert-danger"> <%= msg %></div>
-	<% end %>
+
+<h3>Comments</h3>
+
+<% @post.comments.each do |comment| %>
+	<div class="field">
+	<p><strong> <%= comment.username %></strong>: <%= comment.body %>  
+		<%= link_to '[X]', [comment.post , comment],							:class => 'btn btn-danger',
+				method: :delete,
+				data: {confirm: 'Are You Sure?'}%>
+
+	</p>
+
+	</div>
+
 <% end %>
-		<p><strong><%= comment.username %></strong> : <%= comment.body %> <%= link_to '[X]',[comment.post , comment], :class => 'btn btn-danger' , method: :delete , 
-			data: {confirm:'Are you sure?'} %>
-		</p>
 
-	<% end %>
-
-
-</div>
-<hr>			 	
 <h3>Add Comment</h3>					
 <%= form_for ([@post, @post.comments.build]) do |f| %>
 <% if @post.errors.any? %>

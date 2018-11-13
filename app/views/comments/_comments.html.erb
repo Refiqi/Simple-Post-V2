@@ -1,0 +1,8 @@
+
+<h3>Add Comment</h3>					
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+<% if @post.errors.any? %>
+	<% @post.errors.messages.each do |msg| %>
+		<div class="alert alert-danger"> <%= msg %></div>
+	<% end %>
+<% end %>
