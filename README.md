@@ -18,11 +18,12 @@ Basic CRUD with Authenticate.
     rails server | Running rails server in localhost
     running at http://localhost:3000
 
-# Run Local
+# Run Local Rubocop
   
   
-    bundle exec rspec
-    Open file index.html in file:///<your-path-to-file>/blog-workshop/coverage/index.html, open browser for show code coverage.
+    bundle exec rubocop <your_file> [options]
+    [options] : Auto Correct = -a
+    
 
 
 # Author

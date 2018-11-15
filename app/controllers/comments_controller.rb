@@ -1,27 +1,28 @@
+# frozen_string_literal: true
+
+# Comment Controller to post show
 class CommentsController < ApplicationController
+  def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    redirect_to post_path(@post)
+  end
 
-	def create
-		@post = Post.find(params[:post_id])
-		@comment = @post.comments.create(comment_params)
-		redirect_to post_path(@post)
-	end
+  def new
+    @comment = Comment.new
+  end
 
-	def new
-		@comment =Comment.new
-	end
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
 
-	def destroy
-		@post = Post.find(params[:post_id])
-		@comment = @post.comments.find(params[:id])
-		@comment.destroy
+    redirect_to post_path(@post)
+  end
 
-		redirect_to post_path(@post)
-	end
+  private
 
-	private def comment_params
-		params.require(:comment).permit(:username, :body)
-
-	end
-
-
+  def comment_params
+    params.require(:comment).permit(:username, :body)
+  end
 end
