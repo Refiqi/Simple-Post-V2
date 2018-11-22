@@ -1,7 +1,7 @@
 # Simple Blog
  [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() 
-Languages : Ruby, Framework : Rails
-Basic CRUD with Authenticate.  
+- Languages : Ruby, Framework : Rails
+Basic CRUD with Comment.  
 
 # Pre
     Ruby version 2.5.0 or higher
